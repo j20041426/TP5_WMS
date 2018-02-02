@@ -1,0 +1,43 @@
+{include file="user/header" /}
+<div class="layui-container">  
+    <form class="layui-form" action={:url('/user')} method="post">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username" required lay-verify="required" 
+                placeholder="请输入用户名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="password" required lay-verify="required" 
+                placeholder="请输入密码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="nickname" required lay-verify="required" 
+                placeholder="请输入昵称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-inline">
+                <select name="sex">
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-inline">
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <button class="layui-btn" lay-submit>保存</button>
+            </div>
+        </div>
+    </form>
+</div>
+{include file="user/footer" /}

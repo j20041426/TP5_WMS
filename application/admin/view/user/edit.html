@@ -1,0 +1,29 @@
+{include file="user/header" /}
+<form class="layui-form" action={:url('/user')} method="post">
+    <input type="hidden" name="id" value="{$user.id}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">昵称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="nickname" required lay-verify="required" 
+            placeholder="请输入昵称" autocomplete="off" class="layui-input"
+            value="{$user.nickname}">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-inline">
+            <select name="sex" lay-verify="required">
+                <option value="1" {$user.sex=='1'?'selected':''}>男</option>
+                <option value="2" {$user.sex=='2'?'selected':''}>女</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            <button class="layui-btn" lay-submit>保存</button>
+        </div>
+    </div>
+</form>
+{include file="user/footer" /}

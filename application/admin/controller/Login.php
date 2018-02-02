@@ -17,8 +17,7 @@ class Login extends Controller{
                 $data,
                 [
                     'username' => 'require',
-                    'password' => 'require',
-                    '__token__' => 'token'
+                    'password' => 'require'
                 ]
             );
             if($result !== true){
