@@ -3,17 +3,10 @@
 namespace app\admin\controller;
 
 use think\Controller;
-use think\Session;
+use app\admin\controller\BaseController;
 
-class Index extends Controller
+class Index extends BaseController
 {
-
-    public function _initialize(){
-        if(!Session::has('uid')){
-            return $this->redirect('login/index');
-        }
-    }
-
     public function index()
     {
         return $this->fetch();

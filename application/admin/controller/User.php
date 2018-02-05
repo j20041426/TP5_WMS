@@ -5,8 +5,9 @@ namespace app\admin\controller;
 use think\Controller;
 use app\admin\model\Users;
 use think\Request;
+use app\admin\controller\BaseController;
 
-class User extends Controller
+class User extends BaseController
 {
     public function index()
     {

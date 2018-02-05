@@ -21,5 +21,6 @@ return [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
         ':name' => ['index/hello', ['method' => 'post']],
     ],
-    '/' => 'admin/index/index',
+    '/home' => 'admin/index/index',
+    '/d1' => 'admin/index/index',
 ];

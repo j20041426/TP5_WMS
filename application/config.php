@@ -238,4 +238,15 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //菜单配置
+    'menus' => [
+        ['title'=>'首页', 'url'=>'/home'],
+        ['title'=>'用户管理', 'url'=>'/user'],
+        ['title'=>'所以商品', 'children'=>[
+            ['title' => '列表一', 'url' => '/d1'],
+            ['title' => '列表二', 'url' => '/d2'],
+            ['title' => '列表三', 'url' => '/d3'],
+        ]]
+    ]
 ];
