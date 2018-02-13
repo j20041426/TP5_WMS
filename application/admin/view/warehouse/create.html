@@ -1,0 +1,37 @@
+{include file="warehouse/header" /}
+<div class="layui-container">  
+    <form class="layui-form" action={:url('/warehouse')} method="post">
+        <div class="layui-form-item">
+            <label class="layui-form-label">库房名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name" required lay-verify="required" 
+                placeholder="请输入库房名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">区域</label>
+            <div class="layui-input-inline">
+                <input type="text" id="selectArea" name="area" required lay-verify="required" 
+                placeholder="请选择区域" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地址</label>
+            <div class="layui-input-inline">
+                <input type="text" name="addr" required lay-verify="required" 
+                placeholder="请输入地址" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-inline">
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <button class="layui-btn" lay-submit>保存</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    init_city_select($("#selectArea"));
+</script>
+{include file="warehouse/footer" /}

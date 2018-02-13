@@ -1,0 +1,15 @@
+{load href="__STATIC__/css/cityLayout.css" /}
+{load href="__STATIC__/js/cityselect.js" /}
+<div class="layui-container">
+    <div class="layui-row">
+        <span class="layui-breadcrumb">
+            <a href={:url('/user')}>库房管理</a>
+            {if condition="$Request.action eq 'create'"}
+            <a href={:url('/user')}>新增库房</a>
+            {/if}
+            {if condition="$Request.action eq 'edit'"}
+            <a href={:url('/user')}>编辑库房</a>
+            {/if}
+        </span>
+    </div>
+    <div class="layui-row" style="margin-top:20px;">

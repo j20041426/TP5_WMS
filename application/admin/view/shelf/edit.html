@@ -1,0 +1,41 @@
+{include file="shelf/header" /}
+<form class="layui-form" action={:url('/shelf')} method="post">
+    <input type="hidden" name="id" value="{$shelf.id}">
+    <div class="layui-form-item">
+        <label class="layui-form-label">所属库房</label>
+        <div class="layui-input-inline">
+            <select name="wid" lay-verify="required">
+                {volist name="warehouses" id="warehouse"}
+                <option value="{$warehouse.id}" {$warehouse.id==$shelf.wid?'selected':''}>{$warehouse.name}</option>
+                {/volist}
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">行数</label>
+        <div class="layui-input-inline">
+            <input type="text" name="row_num" required lay-verify="required" 
+            placeholder="请输入行数" autocomplete="off" class="layui-input"
+            value="{$shelf.row_num}">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">列数</label>
+        <div class="layui-input-inline">
+            <input type="text" name="col_num" required lay-verify="required" 
+            placeholder="请输入列数" autocomplete="off" class="layui-input"
+            value="{$shelf.col_num}">
+        </div>
+    </div>
+    <input type="hidden" name="view" autocomplete="off" class="layui-input"
+    value="{$shelf.view}">
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            <button class="layui-btn" lay-submit>保存</button>
+        </div>
+    </div>
+</form>
+{include file="shelf/footer" /}

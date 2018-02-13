@@ -1,12 +1,12 @@
-{include file="user/header" /}
-<a href={:url('/user/create')}><button class="layui-btn"><i class="layui-icon">&#xe608;</i> 新增用户</button></a>
+{include file="shelf/header" /}
+<a href={:url('/shelf/create')}><button class="layui-btn"><i class="layui-icon">&#xe608;</i> 新增货架</button></a>
 <table class="layui-table">
     <thead>
         <tr>
             <th>ID</th>
-            <th>用户名</th>
-            <th>昵称</th>
-            <th>性别</th>
+            <th>所属库房</th>
+            <th>行数</th>
+            <th>列数</th>
             <th>创建时间</th>
             <th>修改时间</th>
             <th>操作</th>
@@ -16,26 +16,26 @@
         {volist name="list" id="vo"}
         <tr>
             <td>{$vo.id}</td>
-            <td>{$vo.username}</td>
-            <td>{$vo.nickname}</td>
-            <td>{$vo.sex=='1'?'男':'女'}</td>
+            <td>{$vo.warehouses.name}</td>
+            <td>{$vo.row_num}</td>
+            <td>{$vo.col_num}</td>
             <td>{$vo.create_time}</td>
             <td>{$vo.update_time}</td>
             <td>
-                <a href={:url('/user/'.$vo.id.'/edit')}><button class="layui-btn layui-btn-primary">编辑</button></a>
+                <a href={:url('/shelf/'.$vo.id.'/edit')}><button class="layui-btn layui-btn-primary">编辑</button></a>
                 <button id="del" data-uid="{$vo.id}" class="layui-btn layui-btn-danger">删除</button>
             </td>
         </tr>
         {/volist}
     </tbody>
 </table>
-{include file="user/footer" /}
+{include file="shelf/footer" /}
 <script>
     $('button#del').click(function(e){
         layer.confirm('是否要删除这条数据？', {icon: 3, title: '提示'}, function(index){
             var uid = $(e.target).data('uid');
             $.ajax({
-                url: "{:url('/user/')}" + uid,
+                url: "{:url('/shelf/')}" + uid,
                 type: 'delete',
                 success: function(res){
                     location.reload();

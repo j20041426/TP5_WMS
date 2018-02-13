@@ -36,7 +36,7 @@ class User extends BaseController
             $user = new Users($data);
             $user->save();
         }
-        return $this->index();
+        $this->redirect('/user');
     }
 
     public function read($id)
@@ -59,6 +59,6 @@ class User extends BaseController
     public function delete($id)
     {
         Users::destroy($id);
-        return $this->index();
+        $this->success('删除成功', '/user');
     }
 }

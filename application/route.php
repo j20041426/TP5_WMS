@@ -16,6 +16,8 @@ return [
     '__rest__'=>[
         // 指向index模块的blog控制器
         'user'=>'admin/user',
+        'warehouse'=>'admin/warehouse',
+        'shelf'=>'admin/shelf',
     ],
     '[hello]'     => [
         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],

@@ -6,8 +6,10 @@ use think\Controller;
 use app\admin\model\Users;
 use think\Session;
 
-class Login extends Controller{
-    public function index(){
+class Login extends BaseController
+{
+    public function index()
+    {
         if(Session::has('uid')){
             return $this->fetch('index/index');
         }
@@ -35,7 +37,8 @@ class Login extends Controller{
         return $this->fetch();
     }
 
-    public function logout(){
+    public function logout()
+    {
         Session::delete('uid');
         $this->redirect('login/index');
     }
