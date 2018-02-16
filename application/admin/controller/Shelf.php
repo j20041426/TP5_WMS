@@ -48,10 +48,10 @@ class Shelf extends BaseController
         if (!isset($data['view']) || empty($data['view'])) {
             $data['view'] = $view;
         }
-        if(isset($data['id'])) {
+        if (isset($data['id'])) {
             $shelf = Shelves::find($data['id']);
             $res = $shelf->save($data);
-        }else{
+        } else {
             $shelf = new Shelves($data);
             $shelf->save();
         }

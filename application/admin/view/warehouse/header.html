@@ -3,12 +3,16 @@
 <div class="layui-container">
     <div class="layui-row">
         <span class="layui-breadcrumb">
-            <a href={:url('/user')}>库房管理</a>
+            {if condition="$Request.action eq 'index'"}
+            <a><cite>库房管理</cite></a>
+            {else/}
+            <a href={:url('/warehouse')}>库房管理</a>
+            {/if}
             {if condition="$Request.action eq 'create'"}
-            <a href={:url('/user')}>新增库房</a>
+            <a><cite>新增库房</cite></a>
             {/if}
             {if condition="$Request.action eq 'edit'"}
-            <a href={:url('/user')}>编辑库房</a>
+            <a><cite>编辑库房</cite></a>
             {/if}
         </span>
     </div>

@@ -1,12 +1,16 @@
 <div class="layui-container">
     <div class="layui-row">
-        <span class="layui-breadcrumb">
+        <span class="layui-breadcrumb" style="visibility: visible;">
+            {if condition="$Request.action eq 'index'"}
+            <a><cite>用户管理</cite></a>
+            {else/}
             <a href={:url('/user')}>用户管理</a>
+            {/if}
             {if condition="$Request.action eq 'create'"}
-            <a href={:url('/user')}>新增用户</a>
+            <a><cite>新增用户</cite></a>
             {/if}
             {if condition="$Request.action eq 'edit'"}
-            <a href={:url('/user')}>编辑用户</a>
+            <a><cite>编辑用户</cite></a>
             {/if}
         </span>
     </div>

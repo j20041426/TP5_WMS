@@ -1,12 +1,16 @@
 <div class="layui-container">
     <div class="layui-row">
-        <span class="layui-breadcrumb">
-            <a href={:url('/user')}>货架管理</a>
+        <span class="layui-breadcrumb" style="visibility: visible;">
+            {if condition="$Request.action eq 'index'"}
+            <a><cite>货架管理</cite></a>
+            {else/}
+            <a href={:url('/shelf')}>货架管理</a>
+            {/if}
             {if condition="$Request.action eq 'create'"}
-            <a href={:url('/user')}>新增货架</a>
+            <a><cite>新增货架</cite></a>
             {/if}
             {if condition="$Request.action eq 'edit'"}
-            <a href={:url('/user')}>编辑货架</a>
+            <a><cite>编辑货架</cite></a>
             {/if}
         </span>
     </div>

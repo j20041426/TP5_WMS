@@ -24,5 +24,6 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
     '/home' => 'admin/index/index',
+    '/login' => 'admin/login/index',
     '/d1' => 'admin/index/index',
 ];

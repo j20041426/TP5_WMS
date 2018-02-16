@@ -10,6 +10,7 @@ class Login extends BaseController
 {
     public function index()
     {
+        echo 111;
         if(Session::has('uid')){
             return $this->fetch('index/index');
         }

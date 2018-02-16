@@ -8,7 +8,7 @@ class BaseController extends Controller
 {
     public function _initialize(){
         if(!Session::has('uid')){
-            return $this->redirect('login/');
+            return $this->redirect('/login');
         }
     }
 }
