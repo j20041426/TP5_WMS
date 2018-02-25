@@ -2,7 +2,6 @@
 
 namespace app\admin\controller;
 
-use think\Controller;
 use think\Request;
 use app\admin\model\Shelves;
 use app\admin\model\Warehouses;
@@ -66,7 +65,10 @@ class Shelf extends BaseController
      */
     public function read($id)
     {
-        //
+        $data = Shelves::get($id);
+        $data['view'] = unserialize($data['view']);
+        $this->assign('data', $data);
+        return $this->fetch('detail');
     }
 
     /**

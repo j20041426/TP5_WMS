@@ -22,6 +22,7 @@
             <td>{$vo.create_time}</td>
             <td>{$vo.update_time}</td>
             <td>
+                <button id="detail" data-uid="{$vo.id}" class="layui-btn">查看</button>
                 <a href={:url('/shelf/'.$vo.id.'/edit')}><button class="layui-btn layui-btn-primary">编辑</button></a>
                 <button id="del" data-uid="{$vo.id}" class="layui-btn layui-btn-danger">删除</button>
             </td>
@@ -41,6 +42,15 @@
                     location.reload();
                 }
             });
+        });
+    });
+
+    $('button#detail').click(function(e){
+        var uid = $(e.target).data('uid');
+        layer.open({
+            type: 2,
+            content: "{:url('/shelf/')}" + uid,
+            area: ['500px','500px']
         });
     });
 </script>

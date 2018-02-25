@@ -1,0 +1,39 @@
+{__NOLAYOUT__}
+{extend name="layer" /}
+{block name="style"}
+table th, table td {
+    text-align: center !important;
+}
+{/block}
+{block name="content"}
+<table class="layui-table" lay-size="sm">
+    <colgroup>
+        <col width="50">
+        {volist name="data.view[0]" id="vo"}
+        <col width="50">
+        {/volist}
+    </colgroup>
+    <thead>
+        <tr>
+            <th></th>
+            {volist name="data.view[0]" id="vo" key="k"}
+            <th>{$k}</th>
+            {/volist}
+        </tr>
+    </thead>
+    <tbody>
+        {volist name="data.view" id="vo" key="k"}
+        <tr>
+            <td>{$k}</td>
+            {volist name="vo" id="v"}
+            {if condition="$v eq 0"}
+            <td>○</td>
+            {else /}
+            <td>●</td>
+            {/if}
+            {/volist}
+        </tr>
+        {/volist}
+    </tbody>
+</table>
+{/block}

@@ -25,5 +25,6 @@ return [
     ],
     '/home' => 'admin/index/index',
     '/login' => 'admin/login/index',
-    '/d1' => 'admin/index/index',
+    '/import' => 'admin/operation/import',
+    '/export' => 'admin/operation/export'
 ];

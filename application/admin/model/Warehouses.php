@@ -10,7 +10,8 @@ class Warehouses extends Model
         return $this->hasMany('Shelves', 'wid');
     }
 
-    public static function hasShelves($id) {
+    public static function hasShelves($id)
+    {
         var_export(self::get($id)->shelves);
     }
 }

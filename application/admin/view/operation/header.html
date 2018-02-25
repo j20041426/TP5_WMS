@@ -1,0 +1,17 @@
+<div class="layui-container">
+    <div class="layui-row">
+        <span class="layui-breadcrumb" style="visibility: visible;">
+            {if condition="$Request.action eq 'index'"}
+            <a><cite>仓库操作</cite></a>
+            {else/}
+            <a>仓库操作</a>
+            {/if}
+            {if condition="$Request.action eq 'import'"}
+            <a><cite>入库</cite></a>
+            {/if}
+            {if condition="$Request.action eq 'export'"}
+            <a><cite>出库</cite></a>
+            {/if}
+        </span>
+    </div>
+    <div class="layui-row" style="margin-top:20px;">

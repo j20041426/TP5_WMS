@@ -85,12 +85,10 @@
                     timeout: 5000,
                     dataType: 'json',
                     success: function(res){
-                        console.log(res)
-                        //var res = JSON.parse(res);
                         if(res.code == 0){
                             layer.msg(res.msg);
                         }else if(res.code == 1){
-                            //location.href = res.url;
+                            location.href = res.url;
                         }
                     },
                     error: function(err){

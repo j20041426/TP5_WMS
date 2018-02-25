@@ -2,10 +2,8 @@
 
 namespace app\admin\controller;
 
-use think\Controller;
 use app\admin\model\Users;
 use think\Request;
-use app\admin\controller\BaseController;
 
 class User extends BaseController
 {
@@ -33,6 +31,7 @@ class User extends BaseController
             $user = Users::find($data['id']);
             $res = $user->save($data);
         }else{
+            $data['password'] = Users::crypt($data['password']);
             $user = new Users($data);
             $user->save();
         }

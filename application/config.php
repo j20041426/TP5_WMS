@@ -246,8 +246,11 @@ return [
         ['title'=>'库房管理', 'url'=>'/warehouse'],
         ['title'=>'货架管理', 'url'=>'/shelf'],
         ['title'=>'仓库操作', 'children'=>[
-            ['title' => '入库', 'url' => '/d1'],
-            ['title' => '出库', 'url' => '/d2'],
+            ['title' => '入库', 'url' => '/import'],
+            ['title' => '出库', 'url' => '/export'],
         ]]
-    ]
+    ],
+
+    //APP_KEY
+    'app_key' => 'qwerty654321'
 ];

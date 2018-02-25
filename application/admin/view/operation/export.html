@@ -1,0 +1,32 @@
+{include file="operation/header" /}
+<form class="layui-form" action={:url('/import')} method="post">
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品编码</label>
+        <div class="layui-input-inline">
+            <input type="text" name="row_num" required lay-verify="required"
+                   placeholder="请输入编码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="row_num" required lay-verify="required"
+                   placeholder="请输入名称" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品数量</label>
+        <div class="layui-input-inline">
+            <input type="number" name="row_num" required lay-verify="required"
+                   placeholder="请输入数量" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            <button class="layui-btn" lay-submit>出库</button>
+        </div>
+    </div>
+</form>
+{include file="operation/footer" /}

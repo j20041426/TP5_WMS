@@ -2,7 +2,6 @@
 
 namespace app\admin\controller;
 
-use think\Controller;
 use think\Request;
 use app\admin\model\Warehouses;
 
