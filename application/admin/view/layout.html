@@ -25,9 +25,12 @@
             <div class="layui-logo">仓库管理系统</div>
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
+
+                    
                     <a href="javascript:;">
-                        安安
+                        {$Think.session.nickname}
                     </a>
+                    
                     <dl class="layui-nav-child">
                         <dd>
                             <a href="">基本资料</a>
@@ -47,6 +50,7 @@
             <div class="layui-side-scroll">
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <!--调用commom.php中的getMenuList-->
                     {volist name=":getMenuList()" id="menu"}
                         {if condition="isset($menu.children)"}
                         <li class="layui-nav-item {$menu.active?='layui-nav-itemed'}">

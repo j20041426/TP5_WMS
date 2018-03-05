@@ -23,7 +23,7 @@ class Users extends Model
         if(!$res){
             return ['code'=>0,'msg'=>'密码错误'];
         }     
-        return ['code'=>1,'msg'=>'登录成功'];
+        return ['code'=>1,'msg'=>'登录成功','data'=>$res];
     }
 
     public static function crypt($password)

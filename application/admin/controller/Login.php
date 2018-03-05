@@ -28,7 +28,8 @@ class Login extends Controller
             $users = new Users();
             $res = $users->login($data);
             if($res['code'] == 1){
-                Session::set('uid',1);
+                Session::set('uid',$res['data']['id']);
+                Session::set('nickname',$res['data']['nickname']);
                 $this->success($res['msg'],'/home');
             }else{
                 $this->error($res['msg']);
